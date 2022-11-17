@@ -1,0 +1,140 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.101.0">
+    <title>Starter Template · Bootstrap v5.2</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/starter-template/">
+
+    
+
+    
+<!-- THIS IS THE PART BELOW THAT CAME WITH IT, WE NEED TO UPDATE THE LOCATION -->
+<!-- <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+<!-- THIS HERE NOW IS THE CORRECT LOCATION BELOW.... -->
+<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}"> 
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <!-- IMPORTANT we can then override some of the default settings, and load in a 2nd CSS file -->
+    <!-- <link href="starter-template.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='landing.css') }}"> 
+
+  </head>
+  <body>
+    
+<div class="col-lg-8 mx-auto p-4 py-md-5">
+  <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+    <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+      <img src="https://img.freepik.com/free-vector/charity-logo-hands-supporting-heart-icon-flat-design-vector-illustration_53876-136266.jpg" width="50" height="50" alt="Logo">
+      <span class="fs-4">New York Health Clinic: Patient Self Service Portal</span>
+    </a>
+  </header>
+
+  <main>
+    <h1>Get started with your patient portal now!</h1>
+    <img src ="https://media.istockphoto.com/vectors/red-heart-in-the-hands-vector-id1180804892?k=20&m=1180804892&s=612x612&w=0&h=wuhh0SrnLV5f_yOWk-VqsJJQV4LkP34Z9YeZIyPd6Ms=">
+    <p class="fs-5 col-md-8"> This patient portal allows you to insert in all of the relevant medical information and non-traditional (SDoH) that you want to share with us for analysis!</p>
+
+    <div class="mb-5">
+      <a href="#" class="btn btn-success btn-lg px-4">Create an account</a>
+    </div>
+
+    <div class="mb-5">
+      <a href="/signin" class="btn btn-primary btn-lg px-4">Login</a>
+    </div>
+
+    <hr class="col-3 col-md-2 mb-5">
+
+    <div class="row g-5">
+      <div class="col-md-6">
+        <h2>Test Patient Data</h2>
+        <p>Please click the link below to view realistic dummy patient data list</p>
+        <ul class="icon-list ps-0">
+          <li class="d-flex align-items-start mb-1"><a href="/patients" rel="noopener">Dummy Patient List</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-6">
+        <h2>Resources</h2>
+        <p>Read more detailed instructions and documentation on how to use the patient self service portal.</p>
+        <ul class="icon-list ps-0">
+          <!-- <li class="d-flex align-items-start mb-1"><a href="../getting-started/introduction/">Bootstrap quick start guide</a></li>
+          <li class="d-flex align-items-start mb-1"><a href="../getting-started/webpack/">Bootstrap Webpack guide</a></li>
+          <li class="d-flex align-items-start mb-1"><a href="../getting-started/parcel/">Bootstrap Parcel guide</a></li>
+          <li class="d-flex align-items-start mb-1"><a href="../getting-started/vite/">Bootstrap Vite guide</a></li>
+          <li class="d-flex align-items-start mb-1"><a href="../getting-started/contribute/">Contributing to Bootstrap</a></li> -->
+        </ul>
+      </div>
+    </div>
+  </main>
+  <footer class="pt-5 my-5 text-muted border-top">
+    Created by Alice Wu &middot; &copy; 2022
+  </footer>
+</div>
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      
+  </body>
+</html>

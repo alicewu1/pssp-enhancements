@@ -20,3 +20,8 @@ HHA 504 / Cloud Computing / Assignment 9 / PssP Enhancements
 # 4. Create a video demo showcasing the PSSP
 - Demonstrate accomplishments
 - Discuss any errors encountered 
+
+
+# Creating a new schema
+- Copy & Paste **userTable.sql** into a new Query tab in MySQL Workbench 
+- Verify **Admin** user was created in your browser **Log in** page 

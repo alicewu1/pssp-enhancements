@@ -21,20 +21,22 @@ HHA 504 / Cloud Computing / Assignment 9 / PssP Enhancements
 - Demonstrate accomplishments
 - Discuss any errors encountered 
 
-
-# Creating a new schema
+# Creating a new schema for user accounts
 - Copy & Paste **userTable.sql** into a new Query tab in MySQL Workbench 
 - Verify **Admin** user was created in your browser **Log in** page 
 
+<br>
+
+# Images Folder
+- contains screenshots of my live patient portal, styling, and functionalities
 
 # ERRORS:
-- Under Login, @app.route('/login', methods=['GET', 'POST'])
-- I attempted to get the account type "careprovider" to log in using the coding below:
+- **[ERROR 1]** Under @app.route('/login'), I received a "Build Error for get_patient_details, did you forget to specfiy values mrn?" 
+    - (screenshot included in images folder)
+    - When attempting to add account type "careprovider" to log in using the coding below:
+             https://github.com/alicewu1/pssp-enhancements/blob/cccceff6f64405322b89b84e44b701835b75dbba/app.py#L231-L257 
 
-            elif session['account_type'] == 'careprovider':
-                return redirect(url_for('get_gui_patients'))   
-- I received a Build Error for get_patient_details, did you forget to specify values mrn?
+- **[RESOLVED]** by: adding **elif** to include care providers in the get_gui_patients 
+             https://github.com/alicewu1/pssp-enhancements/blob/cccceff6f64405322b89b84e44b701835b75dbba/app.py#L447-L457
 
-- Resolved by: adding elif to include care providers in the get_gui_patients 
-- @app.route('/patients', methods=['GET'])
-def get_gui_patients():
+- **[ERROR 2]** When I **Add New Patient** on the patients list page, the **Date of Birth** and **Zip Code** values are swapped

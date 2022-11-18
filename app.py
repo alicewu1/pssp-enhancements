@@ -250,6 +250,8 @@ def login():
             elif session['account_type'] == 'patient':
                 ## go to /details/{{row.mrn}} 
                 return redirect(url_for('get_patient_details', mrn=session['mrn']))
+            elif session['account_type'] == 'careprovider':
+                return redirect(url_for('get_gui_patients'))
         else:
             msg = 'Incorrect username / password !'
     return render_template('/login.html', msg = msg)
@@ -265,6 +267,9 @@ def register():
         elif request.form['account_type'] == 'patient':
             # redirect to patient registration page
             return redirect(url_for('register_patient'))
+        elif request.form['account_type'] == 'careprovider':
+            # redirect to care provider registration page
+            return redirect(url_for('register_careprovider'))
     elif request.method == 'POST':
         # Form is empty... (no POST data)
         msg = 'Please fill out the form!'
@@ -445,6 +450,9 @@ def get_gui_patients():
     if 'loggedin' in session and session['account_type'] == 'admin':
         returned_Patients = Patients.query.all() # documentation for .query exists: https://docs.sqlalchemy.org/en/14/orm/query.html
         return render_template("patient_all.html", patients = returned_Patients)
+    elif 'loggedin' in session and session['account_type'] == 'careprovider':
+        returned_Patients = Patients.query.all() # documentation for .query exists: https://docs.sqlalchemy.org/en/14/orm/query.html
+        return render_template("patient_all.html", patients = returned_Patients)    
     else:
         return redirect(url_for('get_patient_details', mrn=session['mrn']))
 
@@ -504,6 +512,9 @@ def get_patient_details(mrn):
     db_conditions = Conditions.query.all()
     db_medications = Medications.query.all()
     db_procedures = Procedures.query.all()
+    print('Number of conditions total loaded: ', len(db_conditions))
+    print('Number of medications total loaded: ', len(db_medications))
+    print('Number of procedures total loaded: ', len(db_procedures))
     return render_template("patient_details.html", patient_details = patient_details, 
         patient_conditions = patient_conditions, patient_medications = patient_medications, patient_procedures = patient_procedures,
         db_conditions = db_conditions, db_medications = db_medications, db_procedures = db_procedures)

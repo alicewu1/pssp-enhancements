@@ -3,10 +3,11 @@
 {% block title %} Home {% endblock %}
 {% block body %}
 
+<link rel="stylesheet" href="{{ url_for('static', filename='patients.css') }}"> 
 <div class="container">
     <div class="row">
         <div class="col md-12">
-            <div class="jumbotron p-3">
+            <div class="jumbotron p-4">
 
                 <h2 style="margin-bottom: 1em;"> Patient List
                     <button type="button" class="btn btn-success float-right"

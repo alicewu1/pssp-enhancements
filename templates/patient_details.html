@@ -10,6 +10,7 @@ the second container is for vitals, the third container is for allergies, and th
 
 
 <!-- create a new container with two columns -->
+<link rel="stylesheet" href="{{ url_for('static', filename='patients.css') }}"> 
 <div class="container">
     <div class="row">
 
@@ -44,7 +45,7 @@ the second container is for vitals, the third container is for allergies, and th
                                     <div class="col md-6">
                                         <h3> Demographics </h3>
                                         <hr>
-                                        <table class="table table-hover table-dark">
+                                        <table class="table table-hover table-light">
                                             <tr>
                                                 <th>ID</th>
                                                 <td>{{patient_details.id}}</td>
@@ -87,7 +88,7 @@ the second container is for vitals, the third container is for allergies, and th
                                     <div class="col md-6">
                                         <h3> Conditions </h3>
                                         <hr>
-                                        <table class="table table-hover table-dark">
+                                        <table class="table table-hover table-light">
             
                                             {% for row in patient_conditions %}
             
@@ -224,22 +225,22 @@ the second container is for vitals, the third container is for allergies, and th
                                     <div class="col md-6">
                                         <h3> Medications </h3>
                                         <hr>
-                                        <table class="table table-hover table-dark">
+                                        <table class="table table-hover table-light">
                                       
 
                                             {% for row in patient_medications %}
             
                                             <tr>
-            
-                                                <td> 
-                                                    {{row.med_ndc}} 
+                                                <td>
+                                                    {{row.med_ndc}}
                                                     <br/>
-                                                    {% for med in db_medications %}
-                                                        {% if row.med_ndc == med.med_ndc %}
-                                                                {{med.med_human_name}}
+                                                    {% for db_medications in db_medications %}
+                                                        {% if row.med_ndc == db_medications.med_ndc %}
+                                                                {{db_medications.med_human_name}}
                                                         {% endif %}
                                                     {% endfor %}
                                                     <br />
+                                                    <a href="/update_medications/{{row.id}}" class="btn btn-warning btn-xs" data-target="#modaleditmedication{{row.id}}">Edit</a>
                                                 </td>
                                             </tr>
 
@@ -289,7 +290,7 @@ the second container is for vitals, the third container is for allergies, and th
                                     <div class="col md-6">
                                         <h3> Procedures </h3>
                                         <hr>
-                                        <table class="table table-hover table-dark">
+                                        <table class="table table-hover table-light">
                                             <tr>
                                                 <th>Procedure Name</th>
                                                 <td>not yet developed</td>

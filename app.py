@@ -1,11 +1,17 @@
 # pip install flask-mysqlalchemy
+# pip install flask-sqlalchemy
 # pip install mysqlclient (Python 3 compatible)
+# python -m pip install --upgrade pip
+# pip install python-dotenv
+# pip3 install pymysql
+
 from flask import Flask, render_template, request, redirect, session, url_for, flash, jsonify, abort
 from flask_sqlalchemy import SQLAlchemy # pip install flask-sqlalchemy (py package used to connect to SQL relational db)
 from dotenv import load_dotenv
 import os
 import datetime
 import uuid
+
 
 load_dotenv()
 
